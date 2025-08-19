@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Portafolio.Models;
 
@@ -15,7 +16,12 @@ namespace Portafolio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var persona = new Persona()
+            {
+                Nombre = "Cristian Mendoza",
+                Edad = 23
+            };
+            return View(persona);
         }
 
         public IActionResult Privacy()
